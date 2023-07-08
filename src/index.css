@@ -51,6 +51,15 @@ ol {
 	list-style: none;
 }
 
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding: 20px;
+	border: var(--line-border);
+}
+
 button {
 	width: 120px;
 	padding: 4px;
