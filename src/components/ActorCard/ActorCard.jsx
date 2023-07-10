@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { MAIN_URL_TO_IMAGE, URL_TO_PLACEHOLDER } from '../../utils/constants';
 import css from './ActorCard.module.css';
 
@@ -13,6 +14,12 @@ const ActorCard = ({ path, name, character }) => {
       <p>Character: {character}</p>
     </div>
   );
+};
+
+ActorCard.propTypes = {
+  path: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  character: PropTypes.string.isRequired,
 };
 
 export default ActorCard;

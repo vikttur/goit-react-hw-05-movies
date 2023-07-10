@@ -21,15 +21,18 @@ const Reviews = () => {
 
   return (
     <div className={css.name}>
-      {!reviews.length && <p>We don't have any reviews for this movie</p>}
-      <ul>
-        {reviews.map(({ id, author, content }) => (
-          <li key={String(id)}>
-            <h5>Author: {author}</h5>
-            <p>{content}</p>
-          </li>
-        ))}
-      </ul>
+      {!reviews.length ? (
+        <p>We don't have any reviews for this movie</p>
+      ) : (
+        <ul>
+          {reviews.map(({ id, author, content }) => (
+            <li key={String(id)}>
+              <h5>Author: {author}</h5>
+              <p>{content}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

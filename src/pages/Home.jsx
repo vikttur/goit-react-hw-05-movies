@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <h1>Trending today</h1>
-      <ListMovies movies={movies} />
+      {movies.length ? <ListMovies movies={movies} /> : ''}
     </div>
   );
 };

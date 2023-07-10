@@ -10,11 +10,6 @@ const Cast = lazy(() => import('../Cast/Cast'));
 const Reviews = lazy(() => import('../Reviews/Reviews'));
 const NotFound = lazy(() => import('../../pages/NotFound'));
 
-// const ProductDetails = () => {
-//   const { productId } = useParams();
-//   return <div>Now showing product with id - {productId}</div>;
-// };
-
 export const App = () => {
   return (
     <Routes>

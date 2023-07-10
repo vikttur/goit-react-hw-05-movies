@@ -8,7 +8,7 @@ const Searchbar = ({ onSubmit }) => {
   const [search, setSearch] = useState('');
 
   const handleSearchChange = e => {
-    setSearch(e.currentTarget.value.toLowerCase());
+    setSearch(e.target.value.toLowerCase());
   };
 
   const handleSubmit = e => {
@@ -16,7 +16,7 @@ const Searchbar = ({ onSubmit }) => {
 
     if (search.trim() === '') return;
     onSubmit(search);
-    setSearch(search);
+    setSearch('');
   };
 
   return (

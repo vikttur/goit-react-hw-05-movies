@@ -1,5 +1,11 @@
 import { useState, useEffect, Suspense } from 'react';
-import { useLocation, useParams, Link, Outlet } from 'react-router-dom';
+import {
+  useNavigate,
+  useLocation,
+  useParams,
+  Link,
+  Outlet,
+} from 'react-router-dom';
 import { getMovieById } from '../serviceApi/serviceApi';
 import Button from '../components/Button/Button';
 import MovieCard from 'components/MovieCard/MovieCard';
@@ -20,15 +26,18 @@ const MovieDetails = () => {
     fetchMovieById();
   }, [movieId]);
 
+  const navigate = useNavigate();
   const location = useLocation();
-  const previousPage = location.state?.from ?? '/';
+
+  // const previousPage = location.state?.from ?? '/';
+  const handleClick = () => navigate(location?.state?.from ?? '/');
 
   return (
     <div>
-      <Button type="button">
-        <Link to={previousPage}>Go back</Link>
+      <Button type="button" onClick={handleClick}>
+        {/* <Link to={previousPage}>Go back</Link> */}
       </Button>
-      <MovieCard infoAboutMovie={movie} />
+      {movie !== '' && <MovieCard infoAboutMovie={movie} />}
       <h4>Additional information</h4>
       <ul>
         <li>

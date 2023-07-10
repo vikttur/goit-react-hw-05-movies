@@ -24,7 +24,7 @@ const Movies = () => {
   return (
     <div>
       <Searchbar onSubmit={setSearch} />
-      {movies.length > 0 && <ListMovies movies={movies} />}
+      {movies.length ? <ListMovies movies={movies} /> : ''}
     </div>
   );
 };

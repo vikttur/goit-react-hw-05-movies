@@ -1,4 +1,5 @@
 import { MAIN_URL_TO_IMAGE, URL_TO_PLACEHOLDER } from '../../utils/constants';
+import PropTypes from 'prop-types';
 import css from './MovieCard.module.css';
 
 const MovieCard = ({ infoAboutMovie }) => {
@@ -32,6 +33,10 @@ const MovieCard = ({ infoAboutMovie }) => {
       <p>{genresString}</p>
     </div>
   );
+};
+
+MovieCard.propTypes = {
+  infoAboutMovie: PropTypes.object.isRequired,
 };
 
 export default MovieCard;
