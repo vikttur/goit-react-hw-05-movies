@@ -1,3 +1,12 @@
 .card {
 	background-color: rgba(0, 255, 115, 0.551);
 }
+
+
+.poster {
+	width: 200px;
+	height: 270px;
+
+	color: red;
+	text-size-adjust: 20px;
+}

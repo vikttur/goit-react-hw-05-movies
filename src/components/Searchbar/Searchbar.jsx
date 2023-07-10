@@ -16,7 +16,7 @@ const Searchbar = ({ onSubmit }) => {
 
     if (search.trim() === '') return;
     onSubmit(search);
-    setSearch('');
+    setSearch(search);
   };
 
   return (

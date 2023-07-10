@@ -1,33 +1,31 @@
+import { useState, useEffect } from 'react';
+import { getMovieByQuery } from '../serviceApi/serviceApi';
+import ListMovies from '../components/ListMuvies/ListMuvies';
 import Searchbar from 'components/Searchbar/Searchbar';
-import { Link } from 'react-router-dom';
 
 const Movies = () => {
-  // useEffect(() => {
-  // HTTP
-  // }, []);
-  const onSub = () => {
-    console.log('TEST_TEST_TEST');
-  };
+  const [search, setSearch] = useState('');
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    if (!search) return;
+
+    const fetchMovieByQuery = async () => {
+      try {
+        setMovies(await getMovieByQuery(search));
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    fetchMovieByQuery();
+  }, [search]);
 
   return (
-    <section>
-      <Searchbar onSubmit={onSub} />
-      {[
-        'Movie1',
-        'Movie2',
-        'Movie3',
-        'Movie4',
-        'Movie5',
-        'Movie6',
-        'Movie7',
-      ].map(movie => {
-        return (
-          <Link key={movie} to={`${movie}`}>
-            {movie}
-          </Link>
-        );
-      })}
-    </section>
+    <div>
+      <Searchbar onSubmit={setSearch} />
+      {movies.length > 0 && <ListMovies movies={movies} />}
+    </div>
   );
 };
 

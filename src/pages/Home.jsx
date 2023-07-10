@@ -1,21 +1,19 @@
+import { useState, useEffect } from 'react';
+import { getListTrendingMovies } from '../serviceApi/serviceApi';
+import ListMovies from '../components/ListMuvies/ListMuvies';
+
 const Home = () => {
-  // useEffect(() => {
-  // HTTP
-  // }, []);
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    getListTrendingMovies('').then(setMovies);
+  }, []);
 
   return (
-    <section>
+    <div>
       <h1>Trending today</h1>
-      <ul>
-        <li>movie1</li>
-        <li>movie2</li>
-        <li>movie3</li>
-        <li>movie4</li>
-        <li>movie5</li>
-        <li>movie6</li>
-        <li>movie7</li>
-      </ul>
-    </section>
+      <ListMovies movies={movies} />
+    </div>
   );
 };
 
