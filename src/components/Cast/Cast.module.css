@@ -1,3 +1,20 @@
-.name {
-	color: green;
+.border {
+	padding: 10px 20px;
+
+	border: var(--line-border);
+	border-radius: 12px;
+}
+
+.list {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 16px;
+
+	padding: 10px 20px;
+}
+
+.message {
+	padding: 0;
 }

@@ -1,0 +1,18 @@
+.list {
+	padding: 20px;
+}
+
+.item {
+	padding: 4px;
+
+	background-color: var(--color-form);
+	border: var(--line-border);
+	border-radius: 8px;
+
+	font-size: 24px;
+}
+
+.item:hover,
+.item:focus {
+	background-color: var(--color-accent);
+}

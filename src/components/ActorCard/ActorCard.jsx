@@ -10,8 +10,10 @@ const ActorCard = ({ path, name, character }) => {
   return (
     <div className={css.card}>
       <img className={css.photo} src={src} alt="actor" />
-      <p>{name}</p>
-      <p>Character: {character}</p>
+      <div className={css.info}>
+        <p className={css.name}>{name}</p>
+        <p className={css.character}>Character: {character}</p>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,20 @@
 .card {
-	background-color: rgba(0, 255, 115, 0.551);
-}
+	display: flex;
+	align-items: center;
 
+	background-color: var(--color-form);
+	border: var(--line-border);
+	border-radius: 12px;
+}
 
 .poster {
 	width: 240px;
 
-	color: red;
+	border-radius: 12px;
 	text-size-adjust: 20px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
 }

@@ -20,20 +20,24 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <div className={css.name}>
-      <ul>
-        {cast.map(({ id, profile_path, name, character }) => (
-          <li key={String(id)}>
-            {profile_path && (
-              <ActorCard
-                path={profile_path}
-                name={name}
-                character={character}
-              />
-            )}
-          </li>
-        ))}
-      </ul>
+    <div className={css.border}>
+      {!cast.length ? (
+        <p className={css.message}>We don't have a cast list for this movie</p>
+      ) : (
+        <ul className={css.list}>
+          {cast.map(({ id, profile_path, name, character }) => (
+            <li key={String(id)}>
+              {profile_path && (
+                <ActorCard
+                  path={profile_path}
+                  name={name}
+                  character={character}
+                />
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

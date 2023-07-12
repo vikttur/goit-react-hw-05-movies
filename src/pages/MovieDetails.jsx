@@ -33,17 +33,25 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <Button type="button" onClick={handleClick} />
+      <section>
+        <Button type="button" onClick={handleClick}>
+          -- go back
+        </Button>
+      </section>
+
       {movie !== '' && <MovieCard infoAboutMovie={movie} />}
-      <h4>Additional information</h4>
-      <ul>
-        <li>
-          <Link to="cast">cast</Link>
-        </li>
-        <li>
-          <Link to="reviews">reviews</Link>
-        </li>
-      </ul>
+
+      <h3>Additional information</h3>
+      <section>
+        <ul>
+          <li>
+            <Link to="cast">-cast-</Link>
+          </li>
+          <li>
+            <Link to="reviews">-reviews-</Link>
+          </li>
+        </ul>
+      </section>
 
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />

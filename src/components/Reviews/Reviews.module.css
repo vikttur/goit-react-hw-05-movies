@@ -1,0 +1,19 @@
+.reviews {
+	padding: 10px 20px;
+
+	border: var(--line-border);
+	border-radius: 12px;
+}
+
+.message {
+	padding: 0;
+}
+
+.reviews h5,
+.reviews p {
+	padding: 0;
+}
+
+.reviews p {
+	padding-bottom: 8px;
+}

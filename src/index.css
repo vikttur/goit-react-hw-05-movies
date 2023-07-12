@@ -1,12 +1,13 @@
 @import-normalize;
 
 :root {
-	--color-body: #f5f5f5;
-	--color-text: #212121;
+	--color-body: #f3ecec;
+	--color-section: #cadfe8;
+	--color-text: #000000;
 	--color-button: #efede7;
-	--color-accent: #8ecae0;
-	--color-form: #ecf5f5;
-	--color-card: #fefefe;
+	--color-accent: #8ec7e0;
+	--color-form: #f0f6f19f;
+	--color-card: #cbdacd9f;
 
 	--line-border: 1px solid rgba(50, 52, 52, 0.2);
 	--time-animation: 250ms;
@@ -24,8 +25,6 @@ body {
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
-
 }
 
 code {
@@ -42,6 +41,8 @@ h5,
 h6 {
 	margin: 0;
 	padding: 0;
+	padding-top: 20px;
+	padding-left: 20px;
 }
 
 ul,
@@ -51,13 +52,30 @@ ol {
 	list-style: none;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 section {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center;*/
 
-	padding: 20px;
-	border: var(--line-border);
+	padding: 4px 20px;
+	/* border: var(--line-border); */
+}
+
+section ul {
+	display: flex;
+	gap: 20px;
+
+	font-size: 18px;
+}
+
+section li {
+	display: flex;
+	/* font-weight: bold; */
 }
 
 button {
@@ -82,7 +100,7 @@ button {
 
 button:hover {
 	background-color: var(--color-accent);
-	color: var(--color-card);
+	color: var(--color-form);
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
 		0px 1px 2px rgba(0, 0, 0, 0.08),
 		0px 2px 2px rgba(0, 0, 0, 0.12);

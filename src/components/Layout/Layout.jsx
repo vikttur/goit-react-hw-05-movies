@@ -1,25 +1,16 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-// import css from './Layout.module.css';
-// import styled from 'styled-components';
-
-// const StyledLink = styled(NavLink)`
-//   color: #212121;
-
-//   &.active {
-//     color: orangered;
-//   }
-// `;
+import css from './Layout.module.css';
 
 const Layout = () => {
   return (
     <div>
       <header>
-        <ul>
-          <li>
+        <ul className={css.navigation}>
+          <li className={css.item}>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li>
+          <li className={css.item}>
             <NavLink to="/movies">Movies</NavLink>
           </li>
         </ul>

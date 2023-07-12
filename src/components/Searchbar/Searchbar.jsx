@@ -20,7 +20,7 @@ const Searchbar = ({ onSubmit }) => {
   };
 
   return (
-    <header className={css.searchBar}>
+    <div className={css.searchBar}>
       <form onSubmit={handleSubmit} className={css.searchForm}>
         <input
           className={css.input}
@@ -36,7 +36,7 @@ const Searchbar = ({ onSubmit }) => {
           <MagnificationGlass />
         </Button>
       </form>
-    </header>
+    </div>
   );
 };
 
