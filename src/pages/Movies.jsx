@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from '../serviceApi/serviceApi';
 import ListMovies from '../components/ListMuvies/ListMuvies';
 import Searchbar from 'components/Searchbar/Searchbar';
 
 const Movies = () => {
-  const [search, setSearch] = useState('');
   const [movies, setMovies] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
+    const search = searchParams.get('query');
     if (!search) return;
 
     const fetchMovieByQuery = async () => {
@@ -19,11 +21,11 @@ const Movies = () => {
     };
 
     fetchMovieByQuery();
-  }, [search]);
+  }, [searchParams]);
 
   return (
     <div>
-      <Searchbar onSubmit={setSearch} />
+      <Searchbar onSubmit={setSearchParams} />
       {movies.length ? <ListMovies movies={movies} /> : ''}
     </div>
   );

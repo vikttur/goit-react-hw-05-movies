@@ -5,18 +5,18 @@ import { ReactComponent as MagnificationGlass } from '../../images/magnification
 import css from './Searchbar.module.css';
 
 const Searchbar = ({ onSubmit }) => {
-  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState('');
 
   const handleSearchChange = e => {
-    setSearch(e.target.value.toLowerCase());
+    setQuery(e.target.value.toLowerCase());
   };
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (search.trim() === '') return;
-    onSubmit(search);
-    setSearch('');
+    if (query.trim() === '') return;
+    onSubmit({ query });
+    setQuery('');
   };
 
   return (
@@ -28,7 +28,7 @@ const Searchbar = ({ onSubmit }) => {
           autoComplete="off"
           autoFocus
           placeholder="Search for a movie by title"
-          value={search}
+          value={query}
           onChange={handleSearchChange}
         />
 

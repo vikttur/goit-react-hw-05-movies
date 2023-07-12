@@ -29,14 +29,11 @@ const MovieDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // const previousPage = location.state?.from ?? '/';
   const handleClick = () => navigate(location?.state?.from ?? '/');
 
   return (
     <div>
-      <Button type="button" onClick={handleClick}>
-        {/* <Link to={previousPage}>Go back</Link> */}
-      </Button>
+      <Button type="button" onClick={handleClick} />
       {movie !== '' && <MovieCard infoAboutMovie={movie} />}
       <h4>Additional information</h4>
       <ul>
