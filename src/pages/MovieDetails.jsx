@@ -28,7 +28,6 @@ const MovieDetails = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-
   const handleClick = () => navigate(location?.state?.from ?? '/');
 
   return (
@@ -45,10 +44,14 @@ const MovieDetails = () => {
       <section>
         <ul>
           <li>
-            <Link to="cast">-cast-</Link>
+            <Link to="cast" state={location.state}>
+              -cast-
+            </Link>
           </li>
           <li>
-            <Link to="reviews">-reviews-</Link>
+            <Link to="reviews" state={location.state}>
+              -reviews-
+            </Link>
           </li>
         </ul>
       </section>
