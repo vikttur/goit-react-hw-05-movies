@@ -75,7 +75,15 @@ section ul {
 
 section li {
 	display: flex;
-	/* font-weight: bold; */
+}
+
+section h2 {
+	color: red;
+}
+
+section h3 {
+	color: var(--color-accent);
+	text-decoration: underline;
 }
 
 button {
